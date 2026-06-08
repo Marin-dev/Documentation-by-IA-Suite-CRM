@@ -1,0 +1,87 @@
+# modules/Releases
+modules/Releases/DetailView.php
+modules/Releases/EditView.php
+modules/Releases/Menu.php
+modules/Releases/Popup_picker.php
+modules/Releases/Release.php
+modules/Releases/Save.php
+modules/Releases/field_arrays.php
+modules/Releases/index.php
+modules/Releases/vardefs.php
+# modules/Reminders
+modules/Reminders/Reminder.php
+modules/Reminders/Reminders.js
+modules/Reminders/controller.php
+modules/Reminders/vardefs.php
+# modules/Reminders_Invitees
+modules/Reminders_Invitees/Reminder_Invitee.php
+modules/Reminders_Invitees/vardefs.php
+# modules/ResourceCalendar
+modules/ResourceCalendar/Menu.php
+modules/ResourceCalendar/index.php
+# modules/Roles
+modules/Roles/Delete.php
+modules/Roles/DeleteUserRelationship.php
+modules/Roles/DetailView.php
+modules/Roles/EditView.php
+modules/Roles/Forms.php
+modules/Roles/Menu.php
+modules/Roles/Role.php
+modules/Roles/Save.php
+modules/Roles/SaveUserRelationship.php
+modules/Roles/SubPanelViewUsers.php
+modules/Roles/field_arrays.php
+modules/Roles/vardefs.php
+modules/Roles/views/view.list.php
+# modules/SavedSearch
+modules/SavedSearch/ListView.php
+modules/SavedSearch/Menu.php
+modules/SavedSearch/SavedSearch.php
+modules/SavedSearch/UpgradeSavedSearch.php
+modules/SavedSearch/field_arrays.php
+modules/SavedSearch/index.php
+modules/SavedSearch/vardefs.php
+# modules/Schedulers
+modules/Schedulers/EditView.php
+modules/Schedulers/Menu.php
+modules/Schedulers/Save.php
+modules/Schedulers/Scheduler.php
+modules/Schedulers/Schedulers.js
+modules/Schedulers/_AddJobsHere.php
+modules/Schedulers/field_arrays.php
+modules/Schedulers/vardefs.php
+modules/Schedulers/views/view.detail.php
+modules/Schedulers/views/view.edit.php
+modules/Schedulers/views/view.list.php
+# modules/SchedulersJobs
+modules/SchedulersJobs/SchedulersJob.php
+modules/SchedulersJobs/field_arrays.php
+modules/SchedulersJobs/vardefs.php
+# modules/SecurityGroups
+modules/SecurityGroups/AssignGroups.php
+modules/SecurityGroups/Forms.php
+modules/SecurityGroups/MassAssign.php
+modules/SecurityGroups/Menu.php
+modules/SecurityGroups/SaveConfig.php
+modules/SecurityGroups/SaveSecurityGroupUserRelationship.php
+modules/SecurityGroups/SecurityGroup.php
+modules/SecurityGroups/SecurityGroupMessage.php
+modules/SecurityGroups/SecurityGroupUserRelationship.php
+modules/SecurityGroups/SecurityGroupUserRelationshipEdit.php
+modules/SecurityGroups/SecurityGroup_sugar.php
+modules/SecurityGroups/VersionCheck.php
+modules/SecurityGroups/config.php
+modules/SecurityGroups/info.php
+modules/SecurityGroups/vardefs.php
+# modules/Spots
+modules/Spots/Menu.php
+modules/Spots/ShowSpots.php
+modules/Spots/Spots.php
+modules/Spots/SpotsListViewSmarty.php
+modules/Spots/controller.php
+modules/Spots/vardefs.php
+modules/Spots/Dashlets/SpotsDashlet/SpotsDashlet.en_us.lang.php
+modules/Spots/Dashlets/SpotsDashlet/SpotsDashlet.meta.php
+modules/Spots/Dashlets/SpotsDashlet/SpotsDashlet.php
+modules/Spots/views/view.edit.php
+modules/Spots/views/view.list.php

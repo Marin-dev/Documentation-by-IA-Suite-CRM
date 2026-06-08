@@ -1,0 +1,94 @@
+# include/Localization
+include/Localization/Localization.php
+# include/MVC
+include/MVC/SugarApplication.php
+include/MVC/SugarModule.php
+include/MVC/preDispatch.php
+include/MVC/Controller/ControllerFactory.php
+include/MVC/Controller/SugarController.php
+include/MVC/Controller/action_file_map.php
+include/MVC/Controller/action_view_map.php
+include/MVC/Controller/entry_point_registry.php
+include/MVC/Controller/file_access_control_map.php
+include/MVC/View/SugarView.php
+include/MVC/View/ViewFactory.php
+include/MVC/View/views/view.ajax.php
+include/MVC/View/views/view.ajaxui.php
+include/MVC/View/views/view.classic.config.php
+include/MVC/View/views/view.classic.php
+include/MVC/View/views/view.config.php
+include/MVC/View/views/view.detail.config.php
+include/MVC/View/views/view.detail.php
+include/MVC/View/views/view.edit.php
+include/MVC/View/views/view.errors.php
+include/MVC/View/views/view.favorites.php
+include/MVC/View/views/view.html.php
+include/MVC/View/views/view.importvcard.php
+include/MVC/View/views/view.importvcardsave.php
+include/MVC/View/views/view.json.php
+include/MVC/View/views/view.list.php
+include/MVC/View/views/view.metadata.php
+include/MVC/View/views/view.modulelistmenu.php
+include/MVC/View/views/view.multiedit.php
+include/MVC/View/views/view.noaccess.php
+include/MVC/View/views/view.popup.php
+include/MVC/View/views/view.quick.php
+include/MVC/View/views/view.quickcreate.php
+include/MVC/View/views/view.quickedit.php
+include/MVC/View/views/view.serialized.php
+include/MVC/View/views/view.sugarpdf.config.php
+include/MVC/View/views/view.sugarpdf.php
+include/MVC/View/views/view.vcard.php
+include/MVC/View/views/view.xml.php
+# include/MySugar
+include/MySugar/MySugar.php
+include/MySugar/retrieve_dash_page.php
+include/MySugar/DashletsDialog/DashletsDialog.php
+# include/OutboundEmail
+include/OutboundEmail/OutboundEmail.php
+# include/Popups
+include/Popups/PopupSmarty.php
+include/Popups/Popup_picker.php
+# include/SearchForm
+include/SearchForm/SearchForm.php
+include/SearchForm/SearchForm2.php
+include/SearchForm/SugarSpot.php
+# include/Services
+include/Services/Batch/BatchJob.php
+include/Services/NormalizeRecords/NormalizeRecords.php
+include/Services/NormalizeRecords/NormalizeRecordsSchedulerJob.php
+include/Services/ScriptLoader/SuiteScriptLoader.php
+# include/SubPanel
+include/SubPanel/SubPanel.js
+include/SubPanel/SubPanel.php
+include/SubPanel/SubPanelDefinitions.php
+include/SubPanel/SubPanelRowCounter.php
+include/SubPanel/SubPanelSearchDisplay.php
+include/SubPanel/SubPanelSearchForm.php
+include/SubPanel/SubPanelTiles.js
+include/SubPanel/SubPanelTiles.php
+include/SubPanel/SubPanelTilesTabs.php
+include/SubPanel/SubPanelViewer.php
+include/SubPanel/SugarTab.php
+include/SubPanel/registered_layout_defs.php
+# include/SugarCache
+include/SugarCache/SugarCache.php
+include/SugarCache/SugarCacheAPC.php
+include/SugarCache/SugarCacheAbstract.php
+include/SugarCache/SugarCacheFile.php
+include/SugarCache/SugarCacheMemcache.php
+include/SugarCache/SugarCacheMemcached.php
+include/SugarCache/SugarCacheMemory.php
+include/SugarCache/SugarCacheRedis.php
+include/SugarCache/SugarCacheWincache.php
+include/SugarCache/SugarCacheZend.php
+include/SugarCache/SugarCachesMash.php
+# include/SugarCharts
+include/SugarCharts/JsChart.php
+include/SugarCharts/SugarChart.php
+include/SugarCharts/SugarChartFactory.php
+include/SugarCharts/Jit/Jit.php
+include/SugarCharts/Jit/JitReports.php
+include/SugarCharts/Jit/js/mySugarCharts.js
+include/SugarCharts/Jit/js/sugarCharts.js
+include/SugarCharts/Jit/js/Jit/jit.js

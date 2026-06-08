@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "title": "Orchestration Documentation IA — HierDoc + RetroDoc",
+  "type": "engineering-diagram",
+  "source": "generated",
+  "profile": "engineering-review",
+  "theme": "tech-blue",
+  "layout": "vertical",
+  "counts": {
+    "nodes": 23,
+    "edges": 30,
+    "modules": 5
+  },
+  "nodes": [
+    {
+      "id": "trig_hier",
+      "label": "/hierdoc_orchestrator",
+      "type": "terminal",
+      "module": "hierdoc"
+    },
+    {
+      "id": "file_doc",
+      "label": "hierdoc_file_documenter\n(instances parallèles — 1 par fichier/dossier)",
+      "type": "service",
+      "module": "hierdoc"
+    },
+    {
+      "id": "folder_sum",
+      "label": "hierdoc_folder_summarizer\n(bottom-up, niveau par niveau)",
+      "type": "service",
+      "module": "hierdoc"
+    },
+    {
+      "id": "root_synth",
+      "label": "hierdoc_root_synthesizer\n(une seule fois)",
+      "type": "service",
+      "module": "hierdoc"
+    },
+    {
+      "id": "hier_verif",
+      "label": "hierdoc_verifier\nCouverture + qualité",
+      "type": "service",
+      "module": "hierdoc"
+    },
+    {
+      "id": "out_hier",
+      "label": "docs/hierarchical/\nCONTEXT.md + .doc.md\n(source prioritaire pour RetroDoc)",
+      "type": "database",
+      "module": "hierdoc"
+    },
+    {
+      "id": "trig_retro",
+      "label": "/retrodoc_orchestrator",
+      "type": "terminal",
+      "module": "retrodoc_discovery"
+    },
+    {
+      "id": "reader",
+      "label": "retrodoc_reader\n[1] Inventaire factuel\n→ 00_inventaire.md",
+      "type": "service",
+      "module": "retrodoc_discovery"
+    },
+    {
+      "id": "searcher",
+      "label": "retrodoc_searcher\n[2] Dépendances · Patterns · Flows\n→ 01_dependances · 02_patterns · flows/00_flows",
+      "type": "service",
+      "module": "retrodoc_discovery"
+    },
+    {
+      "id": "archi_f",
+      "label": "retrodoc_archi_fonctionnel\nDiagrammes apps/BDD\nListe modules · Référentiel flux\nCatalogue API · Modèle données",
+      "type": "service",
+      "module": "retrodoc_agents"
+    },
+    {
+      "id": "metier",
+      "label": "retrodoc_metier\nPrésentation · Processus métier\nParcours utilisateur · Use cases\nRègles · Cartographie fonctionnelle",
+      "type": "service",
+      "module": "retrodoc_agents"
+    },
+    {
+      "id": "technique",
+      "label": "retrodoc_technique\nArchitecture infra · Stack\nAPI détaillée (routes/auth/payloads)\nBackend controllers · BDD ERD",
+      "type": "service",
+      "module": "retrodoc_agents"
+    },
+    {
+      "id": "retro_verif",
+      "label": "retrodoc_verifier\nAudit anti-hallucination\nCohérence entre les 3 domaines",
+      "type": "service",
+      "module": "retrodoc_verif"
+    },
+    {
+      "id": "verdict",
+      "label": "PASS / WARN / FAIL",
+      "type": "decision",
+      "module": "retrodoc_verif"
+    },
+    {
+      "id": "correction",
+      "label": "Relancer l'agent\nconcerné (max 2 fois)",
+      "type": "service",
+      "module": "retrodoc_verif"
+    },
+    {
+      "id": "out_retro",
+      "label": "docs/retrodoc/\nREADME.md + COVERAGE.md\narchi_fonctionnel/ · metier/ · technique/",
+      "type": "database",
+      "module": "retrodoc_verif"
+    },
+    {
+      "id": "blocage",
+      "label": "BLOCAGE\ndocs/hierarchical/ absent\n→ lancer /hierdoc_orchestrator",
+      "type": "decision"
+    },
+    {
+      "id": "q_docask",
+      "label": "/doc-ask [question]",
+      "type": "terminal",
+      "module": "mode_question"
+    },
+    {
+      "id": "doc_nav",
+      "label": "doc_navigator\nNavigue docs/hierarchical/\n+ docs/retrodoc/ (si disponible)",
+      "type": "service",
+      "module": "mode_question"
+    },
+    {
+      "id": "q_archi",
+      "label": "/retrodoc-archi-fonctionnel\n[question]",
+      "type": "terminal",
+      "module": "mode_question"
+    },
+    {
+      "id": "q_metier",
+      "label": "/retrodoc-metier\n[question]",
+      "type": "terminal",
+      "module": "mode_question"
+    },
+    {
+      "id": "q_technique",
+      "label": "/retrodoc-technique\n[question]",
+      "type": "terminal",
+      "module": "mode_question"
+    },
+    {
+      "id": "reponse",
+      "label": "Réponse synthétique FR\navec sources citées",
+      "type": "document",
+      "module": "mode_question"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "from": "trig_hier",
+      "to": "file_doc",
+      "type": "primary",
+      "label": "déclenche"
+    },
+    {
+      "id": "edge-2",
+      "from": "file_doc",
+      "to": "folder_sum",
+      "type": "primary",
+      "label": "agrège"
+    },
+    {
+      "id": "edge-3",
+      "from": "folder_sum",
+      "to": "root_synth",
+      "type": "primary"
+    },
+    {
+      "id": "edge-4",
+      "from": "root_synth",
+      "to": "hier_verif",
+      "type": "primary"
+    },
+    {
+      "id": "edge-5",
+      "from": "hier_verif",
+      "to": "out_hier",
+      "type": "primary",
+      "label": "produit"
+    },
+    {
+      "id": "edge-6",
+      "from": "out_hier",
+      "to": "archi_f",
+      "type": "data",
+      "label": "source prioritaire"
+    },
+    {
+      "id": "edge-7",
+      "from": "out_hier",
+      "to": "metier",
+      "type": "data"
+    },
+    {
+      "id": "edge-8",
+      "from": "out_hier",
+      "to": "technique",
+      "type": "data"
+    },
+    {
+      "id": "edge-9",
+      "from": "trig_retro",
+      "to": "blocage",
+      "type": "optional",
+      "label": "si absent"
+    },
+    {
+      "id": "edge-10",
+      "from": "trig_retro",
+      "to": "reader",
+      "type": "primary",
+      "label": "Étape 1"
+    },
+    {
+      "id": "edge-11",
+      "from": "reader",
+      "to": "searcher",
+      "type": "primary",
+      "label": "Étape 2"
+    },
+    {
+      "id": "edge-12",
+      "from": "searcher",
+      "to": "archi_f",
+      "type": "primary",
+      "label": "Étape 3 — parallèle"
+    },
+    {
+      "id": "edge-13",
+      "from": "searcher",
+      "to": "metier",
+      "type": "primary",
+      "label": "Étape 3 — parallèle"
+    },
+    {
+      "id": "edge-14",
+      "from": "searcher",
+      "to": "technique",
+      "type": "primary",
+      "label": "Étape 3 — parallèle"
+    },
+    {
+      "id": "edge-15",
+      "from": "archi_f",
+      "to": "retro_verif",
+      "type": "primary",
+      "label": "Étape 4"
+    },
+    {
+      "id": "edge-16",
+      "from": "metier",
+      "to": "retro_verif",
+      "type": "primary"
+    },
+    {
+      "id": "edge-17",
+      "from": "technique",
+      "to": "retro_verif",
+      "type": "primary"
+    },
+    {
+      "id": "edge-18",
+      "from": "retro_verif",
+      "to": "verdict",
+      "type": "primary"
+    },
+    {
+      "id": "edge-19",
+      "from": "verdict",
+      "to": "out_retro",
+      "type": "primary",
+      "label": "PASS"
+    },
+    {
+      "id": "edge-20",
+      "from": "verdict",
+      "to": "correction",
+      "type": "primary",
+      "label": "FAIL / WARN"
+    },
+    {
+      "id": "edge-21",
+      "from": "correction",
+      "to": "archi_f",
+      "type": "optional",
+      "label": "relance ciblée"
+    },
+    {
+      "id": "edge-22",
+      "from": "correction",
+      "to": "metier",
+      "type": "optional"
+    },
+    {
+      "id": "edge-23",
+      "from": "correction",
+      "to": "technique",
+      "type": "optional"
+    },
+    {
+      "id": "edge-24",
+      "from": "q_docask",
+      "to": "doc_nav",
+      "type": "primary"
+    },
+    {
+      "id": "edge-25",
+      "from": "doc_nav",
+      "to": "reponse",
+      "type": "primary"
+    },
+    {
+      "id": "edge-26",
+      "from": "out_hier",
+      "to": "doc_nav",
+      "type": "optional",
+      "label": "lit"
+    },
+    {
+      "id": "edge-27",
+      "from": "out_retro",
+      "to": "doc_nav",
+      "type": "optional",
+      "label": "lit"
+    },
+    {
+      "id": "edge-28",
+      "from": "q_archi",
+      "to": "archi_f",
+      "type": "optional",
+      "label": "mode question"
+    },
+    {
+      "id": "edge-29",
+      "from": "q_metier",
+      "to": "metier",
+      "type": "optional",
+      "label": "mode question"
+    },
+    {
+      "id": "edge-30",
+      "from": "q_technique",
+      "to": "technique",
+      "type": "optional",
+      "label": "mode question"
+    }
+  ],
+  "modules": [
+    {
+      "id": "hierdoc",
+      "label": "Pipeline HierDoc — Documentation Hiérarchique"
+    },
+    {
+      "id": "retrodoc_discovery",
+      "label": "RetroDoc — Discovery (Étapes 1 & 2 — séquentielles)"
+    },
+    {
+      "id": "retrodoc_agents",
+      "label": "RetroDoc — Agents Spécialisés (Étape 3 — en PARALLÈLE)"
+    },
+    {
+      "id": "retrodoc_verif",
+      "label": "RetroDoc — Vérification & Publication (Étape 4)"
+    },
+    {
+      "id": "mode_question",
+      "label": "Mode Question — Interrogation directe (sans régénération)"
+    }
+  ]
+}

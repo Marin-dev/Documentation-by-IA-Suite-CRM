@@ -1,0 +1,101 @@
+# modules/AOP_Case_Events
+modules/AOP_Case_Events/AOP_Case_Events.php
+modules/AOP_Case_Events/CaseEventsHook.php
+modules/AOP_Case_Events/vardefs.php
+# modules/AOP_Case_Updates
+modules/AOP_Case_Updates/AOPAssignManager.php
+modules/AOP_Case_Updates/AOP_Case_Updates.php
+modules/AOP_Case_Updates/CaseUpdatesHook.php
+modules/AOP_Case_Updates/Case_Updates.php
+modules/AOP_Case_Updates/util.php
+modules/AOP_Case_Updates/vardefs.php
+# modules/AOR_Charts
+modules/AOR_Charts/AOR_Chart.php
+modules/AOR_Charts/chartLines.js
+modules/AOR_Charts/controller.php
+modules/AOR_Charts/vardefs.php
+modules/AOR_Charts/lib/pChart/imagemap.js
+modules/AOR_Charts/lib/pChart/pChart.php
+modules/AOR_Charts/lib/pChart/class/pBarcode128.class.php
+modules/AOR_Charts/lib/pChart/class/pBarcode39.class.php
+modules/AOR_Charts/lib/pChart/class/pBubble.class.php
+modules/AOR_Charts/lib/pChart/class/pCache.class.php
+modules/AOR_Charts/lib/pChart/class/pData.class.php
+modules/AOR_Charts/lib/pChart/class/pDraw.class.php
+modules/AOR_Charts/lib/pChart/class/pImage.class.php
+modules/AOR_Charts/lib/pChart/class/pIndicator.class.php
+modules/AOR_Charts/lib/pChart/class/pPie.class.php
+modules/AOR_Charts/lib/pChart/class/pRadar.class.php
+modules/AOR_Charts/lib/pChart/class/pScatter.class.php
+modules/AOR_Charts/lib/pChart/class/pSplit.class.php
+modules/AOR_Charts/lib/pChart/class/pSpring.class.php
+modules/AOR_Charts/lib/pChart/class/pStock.class.php
+modules/AOR_Charts/lib/pChart/class/pSurface.class.php
+# modules/AOR_Conditions
+modules/AOR_Conditions/AOR_Condition.php
+modules/AOR_Conditions/conditionLines.js
+modules/AOR_Conditions/conditionLines.php
+modules/AOR_Conditions/vardefs.php
+# modules/AOR_Fields
+modules/AOR_Fields/AOR_Field.php
+modules/AOR_Fields/fieldLines.js
+modules/AOR_Fields/fieldLines.php
+modules/AOR_Fields/vardefs.php
+# modules/AOR_Reports
+modules/AOR_Reports/AOR_Report.js
+modules/AOR_Reports/AOR_Report.php
+modules/AOR_Reports/AOR_Report_After.js
+modules/AOR_Reports/AOR_Report_Before.js
+modules/AOR_Reports/Menu.php
+modules/AOR_Reports/aor_utils.php
+modules/AOR_Reports/controller.php
+modules/AOR_Reports/vardefs.php
+modules/AOR_Reports/Dashlets/AORReportsDashlet/AORReportsDashlet.js
+modules/AOR_Reports/Dashlets/AORReportsDashlet/AORReportsDashlet.meta.php
+modules/AOR_Reports/Dashlets/AORReportsDashlet/AORReportsDashlet.php
+modules/AOR_Reports/js/Chart.js
+modules/AOR_Reports/js/jqtree/tree.jquery.js
+modules/AOR_Reports/views/view.detail.php
+modules/AOR_Reports/views/view.edit.php
+# modules/AOR_Scheduled_Reports
+modules/AOR_Scheduled_Reports/AOR_Scheduled_Reports.php
+modules/AOR_Scheduled_Reports/Menu.php
+modules/AOR_Scheduled_Reports/emailRecipients.js
+modules/AOR_Scheduled_Reports/emailRecipients.php
+modules/AOR_Scheduled_Reports/vardefs.php
+modules/AOR_Scheduled_Reports/lib/Cron/AbstractField.php
+modules/AOR_Scheduled_Reports/lib/Cron/CronExpression.php
+modules/AOR_Scheduled_Reports/lib/Cron/DayOfMonthField.php
+modules/AOR_Scheduled_Reports/lib/Cron/DayOfWeekField.php
+modules/AOR_Scheduled_Reports/lib/Cron/FieldFactory.php
+modules/AOR_Scheduled_Reports/lib/Cron/FieldInterface.php
+modules/AOR_Scheduled_Reports/lib/Cron/HoursField.php
+modules/AOR_Scheduled_Reports/lib/Cron/MinutesField.php
+modules/AOR_Scheduled_Reports/lib/Cron/MonthField.php
+modules/AOR_Scheduled_Reports/lib/Cron/YearField.php
+modules/AOR_Scheduled_Reports/lib/Cron/includeCron.php
+# modules/AOS_Contracts
+modules/AOS_Contracts/AOS_Contracts.php
+modules/AOS_Contracts/AOS_Contracts_sugar.php
+modules/AOS_Contracts/Forms.php
+modules/AOS_Contracts/Menu.php
+modules/AOS_Contracts/controller.php
+modules/AOS_Contracts/vardefs.php
+modules/AOS_Contracts/Dashlets/AOS_ContractsDashlet/AOS_ContractsDashlet.meta.php
+modules/AOS_Contracts/Dashlets/AOS_ContractsDashlet/AOS_ContractsDashlet.php
+modules/AOS_Contracts/views/view.detail.php
+# modules/AOS_Invoices
+modules/AOS_Invoices/AOS_Invoices.php
+modules/AOS_Invoices/AOS_Invoices_sugar.php
+modules/AOS_Invoices/Forms.php
+modules/AOS_Invoices/Menu.php
+modules/AOS_Invoices/controller.php
+modules/AOS_Invoices/vardefs.php
+modules/AOS_Invoices/Dashlets/AOS_InvoicesDashlet/AOS_InvoicesDashlet.meta.php
+modules/AOS_Invoices/Dashlets/AOS_InvoicesDashlet/AOS_InvoicesDashlet.php
+modules/AOS_Invoices/views/view.detail.php
+modules/AOS_Invoices/views/view.edit.php
+# modules/AOS_Line_Item_Groups
+modules/AOS_Line_Item_Groups/AOS_Line_Item_Groups.php
+modules/AOS_Line_Item_Groups/AOS_Line_Item_Groups_sugar.php
+modules/AOS_Line_Item_Groups/vardefs.php

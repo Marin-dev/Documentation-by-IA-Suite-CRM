@@ -1,0 +1,96 @@
+# modules/ACL
+modules/ACL/ACLController.php
+modules/ACL/ACLJSController.php
+modules/ACL/Forms.php
+modules/ACL/List.php
+modules/ACL/Menu.php
+modules/ACL/Save.php
+modules/ACL/install_actions.php
+modules/ACL/remove_actions.php
+modules/ACL/vardefs.php
+# modules/ACLActions
+modules/ACLActions/ACLAction.php
+modules/ACLActions/Forms.php
+modules/ACLActions/Menu.php
+modules/ACLActions/actiondefs.override.php
+modules/ACLActions/actiondefs.php
+modules/ACLActions/vardefs.php
+# modules/ACLRoles
+modules/ACLRoles/ACLRole.php
+modules/ACLRoles/ACLRoles.js
+modules/ACLRoles/Delete.php
+modules/ACLRoles/DetailUserAccess.php
+modules/ACLRoles/DetailUserRole.php
+modules/ACLRoles/DetailView.php
+modules/ACLRoles/EditRole.php
+modules/ACLRoles/EditView.php
+modules/ACLRoles/Forms.php
+modules/ACLRoles/ListUsers.php
+modules/ACLRoles/Menu.php
+modules/ACLRoles/Popup_picker.php
+modules/ACLRoles/Save.php
+modules/ACLRoles/vardefs.php
+modules/ACLRoles/views/view.classic.php
+modules/ACLRoles/views/view.list.php
+# modules/AM_ProjectTemplates
+modules/AM_ProjectTemplates/AM_ProjectTemplates.php
+modules/AM_ProjectTemplates/AM_ProjectTemplatesListViewData.php
+modules/AM_ProjectTemplates/AM_ProjectTemplatesListViewSmarty.php
+modules/AM_ProjectTemplates/AM_ProjectTemplates_sugar.php
+modules/AM_ProjectTemplates/Menu.php
+modules/AM_ProjectTemplates/Save.php
+modules/AM_ProjectTemplates/controller.php
+modules/AM_ProjectTemplates/create_project.js
+modules/AM_ProjectTemplates/gantt.php
+modules/AM_ProjectTemplates/jsclass_scheduler.js
+modules/AM_ProjectTemplates/project_table.php
+modules/AM_ProjectTemplates/vardefs.php
+modules/AM_ProjectTemplates/Dashlets/AM_ProjectTemplatesDashlet/AM_ProjectTemplatesDashlet.meta.php
+modules/AM_ProjectTemplates/Dashlets/AM_ProjectTemplatesDashlet/AM_ProjectTemplatesDashlet.php
+modules/AM_ProjectTemplates/js/custom_project.js
+modules/AM_ProjectTemplates/js/jquery.blockUI.js
+modules/AM_ProjectTemplates/js/main_lib.js
+modules/AM_ProjectTemplates/js/splitter.js
+modules/AM_ProjectTemplates/views/view.detail.php
+modules/AM_ProjectTemplates/views/view.edit.php
+modules/AM_ProjectTemplates/views/view.ganttchart.php
+# modules/AM_TaskTemplates
+modules/AM_TaskTemplates/AM_TaskTemplates.php
+modules/AM_TaskTemplates/AM_TaskTemplates_sugar.php
+modules/AM_TaskTemplates/vardefs.php
+modules/AM_TaskTemplates/Dashlets/AM_TaskTemplatesDashlet/AM_TaskTemplatesDashlet.meta.php
+modules/AM_TaskTemplates/Dashlets/AM_TaskTemplatesDashlet/AM_TaskTemplatesDashlet.php
+# modules/AOBH_BusinessHours
+modules/AOBH_BusinessHours/AOBH_BusinessHours.php
+modules/AOBH_BusinessHours/Menu.php
+modules/AOBH_BusinessHours/vardefs.php
+# modules/AOD_Index
+modules/AOD_Index/AOD_Index.php
+modules/AOD_Index/AOD_Index_sugar.php
+modules/AOD_Index/AOD_LogicHooks.php
+modules/AOD_Index/LuceneUtils.php
+modules/AOD_Index/PdfParser.php
+modules/AOD_Index/controller.php
+modules/AOD_Index/vardefs.php
+modules/AOD_Index/views/view.indexdata.php
+# modules/AOD_IndexEvent
+modules/AOD_IndexEvent/AOD_IndexEvent.php
+modules/AOD_IndexEvent/AOD_IndexEvent_sugar.php
+modules/AOD_IndexEvent/vardefs.php
+# modules/AOK_KnowledgeBase
+modules/AOK_KnowledgeBase/AOK_KnowledgeBase.php
+modules/AOK_KnowledgeBase/AOK_KnowledgeBase_SuggestionBox.js
+modules/AOK_KnowledgeBase/AOK_KnowledgeBase_sugar.php
+modules/AOK_KnowledgeBase/Menu.php
+modules/AOK_KnowledgeBase/vardefs.php
+modules/AOK_KnowledgeBase/Dashlets/AOK_KnowledgeBaseDashlet/AOK_KnowledgeBaseDashlet.meta.php
+modules/AOK_KnowledgeBase/Dashlets/AOK_KnowledgeBaseDashlet/AOK_KnowledgeBaseDashlet.php
+modules/AOK_KnowledgeBase/views/view.detail.php
+modules/AOK_KnowledgeBase/views/view.edit.php
+# modules/AOK_Knowledge_Base_Categories
+modules/AOK_Knowledge_Base_Categories/AOK_Knowledge_Base_Categories.php
+modules/AOK_Knowledge_Base_Categories/AOK_Knowledge_Base_Categories_sugar.php
+modules/AOK_Knowledge_Base_Categories/Menu.php
+modules/AOK_Knowledge_Base_Categories/vardefs.php
+modules/AOK_Knowledge_Base_Categories/Dashlets/AOK_Knowledge_Base_CategoriesDashlet/AOK_Knowledge_Base_CategoriesDashlet.meta.php
+modules/AOK_Knowledge_Base_Categories/Dashlets/AOK_Knowledge_Base_CategoriesDashlet/AOK_Knowledge_Base_CategoriesDashlet.php

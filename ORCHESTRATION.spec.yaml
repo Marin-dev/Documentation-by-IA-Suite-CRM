@@ -1,0 +1,431 @@
+meta:
+  theme: tech-blue
+  layout: vertical
+  profile: engineering-review
+  canvas: 1800x2600
+  title: "Orchestration Documentation IA — HierDoc + RetroDoc"
+  description: "Pipeline complet de documentation automatisée : HierDoc (doc hiérarchique fichier par fichier) précède RetroDoc (3 agents spécialisés). Mode question disponible à tout moment."
+  routing: orthogonal
+  source: generated
+
+modules:
+  - id: hierdoc
+    label: "Pipeline HierDoc — Documentation Hiérarchique"
+    style:
+      fillColor: "#DBEAFE"
+      strokeColor: "#2563EB"
+      fontColor: "#1E3A8A"
+
+  - id: retrodoc_discovery
+    label: "RetroDoc — Discovery (Étapes 1 & 2 — séquentielles)"
+    style:
+      fillColor: "#DCFCE7"
+      strokeColor: "#16A34A"
+      fontColor: "#14532D"
+
+  - id: retrodoc_agents
+    label: "RetroDoc — Agents Spécialisés (Étape 3 — en PARALLÈLE)"
+    style:
+      fillColor: "#BBF7D0"
+      strokeColor: "#15803D"
+      fontColor: "#14532D"
+
+  - id: retrodoc_verif
+    label: "RetroDoc — Vérification & Publication (Étape 4)"
+    style:
+      fillColor: "#DCFCE7"
+      strokeColor: "#16A34A"
+      fontColor: "#14532D"
+
+  - id: mode_question
+    label: "Mode Question — Interrogation directe (sans régénération)"
+    style:
+      fillColor: "#FEF3C7"
+      strokeColor: "#D97706"
+      fontColor: "#92400E"
+
+nodes:
+  # ─── HIERDOC ───────────────────────────────────────────────
+  - id: trig_hier
+    label: "/hierdoc_orchestrator"
+    type: terminal
+    module: hierdoc
+    style:
+      fillColor: "#1D4ED8"
+      fontColor: "#FFFFFF"
+      strokeColor: "#1E3A8A"
+
+  - id: file_doc
+    label: "hierdoc_file_documenter\n(instances parallèles — 1 par fichier/dossier)"
+    type: service
+    module: hierdoc
+    style:
+      fillColor: "#BFDBFE"
+      strokeColor: "#3B82F6"
+
+  - id: folder_sum
+    label: "hierdoc_folder_summarizer\n(bottom-up, niveau par niveau)"
+    type: service
+    module: hierdoc
+    style:
+      fillColor: "#BFDBFE"
+      strokeColor: "#3B82F6"
+
+  - id: root_synth
+    label: "hierdoc_root_synthesizer\n(une seule fois)"
+    type: service
+    module: hierdoc
+    style:
+      fillColor: "#BFDBFE"
+      strokeColor: "#3B82F6"
+
+  - id: hier_verif
+    label: "hierdoc_verifier\nCouverture + qualité"
+    type: service
+    module: hierdoc
+    style:
+      fillColor: "#BFDBFE"
+      strokeColor: "#3B82F6"
+
+  - id: out_hier
+    label: "docs/hierarchical/\nCONTEXT.md + .doc.md\n(source prioritaire pour RetroDoc)"
+    type: database
+    module: hierdoc
+    style:
+      fillColor: "#93C5FD"
+      strokeColor: "#2563EB"
+      fontColor: "#1E3A8A"
+
+  # ─── RETRODOC DISCOVERY ────────────────────────────────────
+  - id: trig_retro
+    label: "/retrodoc_orchestrator"
+    type: terminal
+    module: retrodoc_discovery
+    style:
+      fillColor: "#15803D"
+      fontColor: "#FFFFFF"
+      strokeColor: "#14532D"
+
+  - id: reader
+    label: "retrodoc_reader\n[1] Inventaire factuel\n→ 00_inventaire.md"
+    type: service
+    module: retrodoc_discovery
+    style:
+      fillColor: "#A7F3D0"
+      strokeColor: "#16A34A"
+
+  - id: searcher
+    label: "retrodoc_searcher\n[2] Dépendances · Patterns · Flows\n→ 01_dependances · 02_patterns · flows/00_flows"
+    type: service
+    module: retrodoc_discovery
+    style:
+      fillColor: "#A7F3D0"
+      strokeColor: "#16A34A"
+
+  # ─── RETRODOC AGENTS SPÉCIALISÉS ───────────────────────────
+  - id: archi_f
+    label: "retrodoc_archi_fonctionnel\nDiagrammes apps/BDD\nListe modules · Référentiel flux\nCatalogue API · Modèle données"
+    type: service
+    module: retrodoc_agents
+    style:
+      fillColor: "#6EE7B7"
+      strokeColor: "#059669"
+
+  - id: metier
+    label: "retrodoc_metier\nPrésentation · Processus métier\nParcours utilisateur · Use cases\nRègles · Cartographie fonctionnelle"
+    type: service
+    module: retrodoc_agents
+    style:
+      fillColor: "#6EE7B7"
+      strokeColor: "#059669"
+
+  - id: technique
+    label: "retrodoc_technique\nArchitecture infra · Stack\nAPI détaillée (routes/auth/payloads)\nBackend controllers · BDD ERD"
+    type: service
+    module: retrodoc_agents
+    style:
+      fillColor: "#6EE7B7"
+      strokeColor: "#059669"
+
+  # ─── RETRODOC VÉRIFICATION ─────────────────────────────────
+  - id: retro_verif
+    label: "retrodoc_verifier\nAudit anti-hallucination\nCohérence entre les 3 domaines"
+    type: service
+    module: retrodoc_verif
+    style:
+      fillColor: "#A7F3D0"
+      strokeColor: "#16A34A"
+
+  - id: verdict
+    label: "PASS / WARN / FAIL"
+    type: decision
+    module: retrodoc_verif
+    style:
+      fillColor: "#FEF9C3"
+      strokeColor: "#CA8A04"
+      fontColor: "#78350F"
+
+  - id: correction
+    label: "Relancer l'agent\nconcerné (max 2 fois)"
+    type: service
+    module: retrodoc_verif
+    style:
+      fillColor: "#FEE2E2"
+      strokeColor: "#DC2626"
+      fontColor: "#991B1B"
+
+  - id: out_retro
+    label: "docs/retrodoc/\nREADME.md + COVERAGE.md\narchi_fonctionnel/ · metier/ · technique/"
+    type: database
+    module: retrodoc_verif
+    style:
+      fillColor: "#4ADE80"
+      strokeColor: "#15803D"
+      fontColor: "#14532D"
+
+  # ─── BLOCAGE HIERDOC MANQUANT ──────────────────────────────
+  - id: blocage
+    label: "BLOCAGE\ndocs/hierarchical/ absent\n→ lancer /hierdoc_orchestrator"
+    type: decision
+    style:
+      fillColor: "#FEE2E2"
+      strokeColor: "#DC2626"
+      fontColor: "#991B1B"
+
+  # ─── MODE QUESTION ─────────────────────────────────────────
+  - id: q_docask
+    label: "/doc-ask [question]"
+    type: terminal
+    module: mode_question
+    style:
+      fillColor: "#D97706"
+      fontColor: "#FFFFFF"
+      strokeColor: "#92400E"
+
+  - id: doc_nav
+    label: "doc_navigator\nNavigue docs/hierarchical/\n+ docs/retrodoc/ (si disponible)"
+    type: service
+    module: mode_question
+    style:
+      fillColor: "#FDE68A"
+      strokeColor: "#D97706"
+
+  - id: q_archi
+    label: "/retrodoc-archi-fonctionnel\n[question]"
+    type: terminal
+    module: mode_question
+    style:
+      fillColor: "#F59E0B"
+      fontColor: "#FFFFFF"
+      strokeColor: "#B45309"
+
+  - id: q_metier
+    label: "/retrodoc-metier\n[question]"
+    type: terminal
+    module: mode_question
+    style:
+      fillColor: "#F59E0B"
+      fontColor: "#FFFFFF"
+      strokeColor: "#B45309"
+
+  - id: q_technique
+    label: "/retrodoc-technique\n[question]"
+    type: terminal
+    module: mode_question
+    style:
+      fillColor: "#F59E0B"
+      fontColor: "#FFFFFF"
+      strokeColor: "#B45309"
+
+  - id: reponse
+    label: "Réponse synthétique FR\navec sources citées"
+    type: document
+    module: mode_question
+    style:
+      fillColor: "#FEF3C7"
+      strokeColor: "#D97706"
+      fontColor: "#92400E"
+
+edges:
+  # ── HierDoc pipeline ──────────────────────────────────────
+  - from: trig_hier
+    to: file_doc
+    type: primary
+    label: "déclenche"
+
+  - from: file_doc
+    to: folder_sum
+    type: primary
+    label: "agrège"
+
+  - from: folder_sum
+    to: root_synth
+    type: primary
+
+  - from: root_synth
+    to: hier_verif
+    type: primary
+
+  - from: hier_verif
+    to: out_hier
+    type: primary
+    label: "produit"
+
+  # ── HierDoc → RetroDoc (dépendance prioritaire) ─────────
+  - from: out_hier
+    to: archi_f
+    type: data
+    label: "source prioritaire"
+    style:
+      strokeColor: "#2563EB"
+      dashed: true
+
+  - from: out_hier
+    to: metier
+    type: data
+    style:
+      strokeColor: "#2563EB"
+      dashed: true
+
+  - from: out_hier
+    to: technique
+    type: data
+    style:
+      strokeColor: "#2563EB"
+      dashed: true
+
+  # ── HierDoc absent → BLOCAGE ────────────────────────────
+  - from: trig_retro
+    to: blocage
+    type: optional
+    label: "si absent"
+    style:
+      strokeColor: "#DC2626"
+      dashed: true
+
+  # ── RetroDoc Discovery ──────────────────────────────────
+  - from: trig_retro
+    to: reader
+    type: primary
+    label: "Étape 1"
+
+  - from: reader
+    to: searcher
+    type: primary
+    label: "Étape 2"
+
+  # ── RetroDoc → 3 agents (parallèle) ────────────────────
+  - from: searcher
+    to: archi_f
+    type: primary
+    label: "Étape 3 — parallèle"
+
+  - from: searcher
+    to: metier
+    type: primary
+    label: "Étape 3 — parallèle"
+
+  - from: searcher
+    to: technique
+    type: primary
+    label: "Étape 3 — parallèle"
+
+  # ── 3 agents → Verifier ─────────────────────────────────
+  - from: archi_f
+    to: retro_verif
+    type: primary
+    label: "Étape 4"
+
+  - from: metier
+    to: retro_verif
+    type: primary
+
+  - from: technique
+    to: retro_verif
+    type: primary
+
+  # ── Verifier → verdict → sortie/correction ──────────────
+  - from: retro_verif
+    to: verdict
+    type: primary
+
+  - from: verdict
+    to: out_retro
+    type: primary
+    label: "PASS"
+
+  - from: verdict
+    to: correction
+    type: primary
+    label: "FAIL / WARN"
+    style:
+      strokeColor: "#DC2626"
+
+  - from: correction
+    to: archi_f
+    type: optional
+    label: "relance ciblée"
+    style:
+      strokeColor: "#DC2626"
+      dashed: true
+
+  - from: correction
+    to: metier
+    type: optional
+    style:
+      strokeColor: "#DC2626"
+      dashed: true
+
+  - from: correction
+    to: technique
+    type: optional
+    style:
+      strokeColor: "#DC2626"
+      dashed: true
+
+  # ── Mode question ────────────────────────────────────────
+  - from: q_docask
+    to: doc_nav
+    type: primary
+
+  - from: doc_nav
+    to: reponse
+    type: primary
+
+  - from: out_hier
+    to: doc_nav
+    type: optional
+    label: "lit"
+    style:
+      dashed: true
+
+  - from: out_retro
+    to: doc_nav
+    type: optional
+    label: "lit"
+    style:
+      dashed: true
+
+  - from: q_archi
+    to: archi_f
+    type: optional
+    label: "mode question"
+    style:
+      strokeColor: "#D97706"
+      dashed: true
+
+  - from: q_metier
+    to: metier
+    type: optional
+    label: "mode question"
+    style:
+      strokeColor: "#D97706"
+      dashed: true
+
+  - from: q_technique
+    to: technique
+    type: optional
+    label: "mode question"
+    style:
+      strokeColor: "#D97706"
+      dashed: true

@@ -1,0 +1,102 @@
+# modules/Studio
+modules/Studio/Forms.php
+modules/Studio/JSTransaction.js
+modules/Studio/SaveTabs.php
+modules/Studio/TabGroups.php
+modules/Studio/config.php
+modules/Studio/studio.js
+modules/Studio/studiodd.js
+modules/Studio/studiotabgroups.js
+modules/Studio/wizard.php
+modules/Studio/ygDDListStudio.js
+modules/Studio/DropDowns/DropDownHelper.php
+modules/Studio/DropDowns/EditView.php
+modules/Studio/TabGroups/EditViewTabs.php
+modules/Studio/TabGroups/TabGroupHelper.php
+modules/Studio/parsers/StudioParser.php
+modules/Studio/wizards/EditDropDownWizard.php
+modules/Studio/wizards/RenameModules.php
+modules/Studio/wizards/StudioWizard.php
+# modules/SugarFeed
+modules/SugarFeed/AdminSettings.php
+modules/SugarFeed/Forms.php
+modules/SugarFeed/Menu.php
+modules/SugarFeed/SugarFeed.php
+modules/SugarFeed/SugarFeedFlush.php
+modules/SugarFeed/action_view_map.php
+modules/SugarFeed/feedLogicBase.php
+modules/SugarFeed/vardefs.php
+modules/SugarFeed/Dashlets/SugarFeedDashlet/SugarFeedDashlet.meta.php
+modules/SugarFeed/Dashlets/SugarFeedDashlet/SugarFeedDashlet.php
+modules/SugarFeed/views/view.adminsettings.php
+# modules/SurveyQuestionOptions
+modules/SurveyQuestionOptions/Menu.php
+modules/SurveyQuestionOptions/SurveyQuestionOptions.php
+modules/SurveyQuestionOptions/vardefs.php
+modules/SurveyQuestionOptions/Dashlets/SurveyQuestionOptionsDashlet/SurveyQuestionOptionsDashlet.meta.php
+modules/SurveyQuestionOptions/Dashlets/SurveyQuestionOptionsDashlet/SurveyQuestionOptionsDashlet.php
+# modules/SurveyQuestionResponses
+modules/SurveyQuestionResponses/Menu.php
+modules/SurveyQuestionResponses/SurveyQuestionResponses.php
+modules/SurveyQuestionResponses/vardefs.php
+modules/SurveyQuestionResponses/Dashlets/SurveyQuestionResponsesDashlet/SurveyQuestionResponsesDashlet.meta.php
+modules/SurveyQuestionResponses/Dashlets/SurveyQuestionResponsesDashlet/SurveyQuestionResponsesDashlet.php
+# modules/SurveyQuestions
+modules/SurveyQuestions/Menu.php
+modules/SurveyQuestions/SurveyQuestions.php
+modules/SurveyQuestions/vardefs.php
+modules/SurveyQuestions/Dashlets/SurveyQuestionsDashlet/SurveyQuestionsDashlet.meta.php
+modules/SurveyQuestions/Dashlets/SurveyQuestionsDashlet/SurveyQuestionsDashlet.php
+# modules/SurveyResponses
+modules/SurveyResponses/Menu.php
+modules/SurveyResponses/SurveyResponses.php
+modules/SurveyResponses/vardefs.php
+modules/SurveyResponses/Dashlets/SurveyResponsesDashlet/SurveyResponsesDashlet.meta.php
+modules/SurveyResponses/Dashlets/SurveyResponsesDashlet/SurveyResponsesDashlet.php
+modules/SurveyResponses/Lines/Lines.php
+# modules/Surveys
+modules/Surveys/Menu.php
+modules/Surveys/Surveys.php
+modules/Surveys/controller.php
+modules/Surveys/vardefs.php
+modules/Surveys/Dashlets/SurveysDashlet/SurveysDashlet.meta.php
+modules/Surveys/Dashlets/SurveysDashlet/SurveysDashlet.php
+modules/Surveys/Entry/Survey.php
+modules/Surveys/Entry/SurveySubmit.php
+modules/Surveys/Entry/Thanks.php
+modules/Surveys/Lines/Lines.php
+modules/Surveys/Utils/utils.php
+modules/Surveys/views/view.reports.php
+# modules/Tasks
+modules/Tasks/Menu.php
+modules/Tasks/MyTasks.php
+modules/Tasks/Save.php
+modules/Tasks/Task.php
+modules/Tasks/TasksQuickCreate.php
+modules/Tasks/field_arrays.php
+modules/Tasks/vardefs.php
+modules/Tasks/Dashlets/MyTasksDashlet/MyTasksDashlet.data.php
+modules/Tasks/Dashlets/MyTasksDashlet/MyTasksDashlet.meta.php
+modules/Tasks/Dashlets/MyTasksDashlet/MyTasksDashlet.php
+modules/Tasks/views/view.edit.php
+# modules/TemplateSectionLine
+modules/TemplateSectionLine/TemplateSectionLine.php
+modules/TemplateSectionLine/TemplateSectionLine_sugar.php
+modules/TemplateSectionLine/vardefs.php
+# modules/Trackers
+modules/Trackers/BreadCrumbStack.php
+modules/Trackers/Metric.php
+modules/Trackers/Trackable.php
+modules/Trackers/Tracker.php
+modules/Trackers/TrackerManager.php
+modules/Trackers/config.php
+modules/Trackers/populateSeedData.php
+modules/Trackers/vardefs.php
+modules/Trackers/monitor/BlankMonitor.php
+modules/Trackers/monitor/Monitor.php
+modules/Trackers/monitor/tracker_monitor.php
+modules/Trackers/store/DatabaseStore.php
+modules/Trackers/store/Store.php
+modules/Trackers/store/SugarLogStore.php
+modules/Trackers/store/TrackerQueriesDatabaseStore.php
+modules/Trackers/store/TrackerSessionsDatabaseStore.php
